@@ -157,19 +157,7 @@ The automated tests provide immediate feedback as to whether or not your solutio
 
 ## How solutions will be graded
 
-- Your grade is entirely dependent on the completeness of your solutions
-
-- No credit will be given for code that cannot run due to typos or syntax errors.
-
-- No credit will be given for commented out code.
-
-- There are ten questions on the test. Below is an example of how a question appears on the test.<br><kbd><img src="./images/test-question.png" ></kbd>
-
-- Each question counts for 10 points of the final grade.
-
-- For a question to be counted as correct all specs must pass for the question.<br><kbd><img src="./images/correct-answer.png" ></kbd>
-
-- If any of the specs are red for the question then the entire question will be considered incorrect.<br><kbd><img src="./images/incorrect-answer.png" ></kbd>
+- Each problem is worth 10 points. Full points will be awarded if ALL unit tests pass for a given problem. Partial credit may be awarded at the discretion of the instructor.
 
 ## Hints
 - If you have green tests and notice that everything is now completely red, it means you likely have a syntax error or a type error in your code. Those kinds of errors will keep all the code from executing properly.
