@@ -28,12 +28,15 @@ function lowerCase(input){
 
 //problem02
 function subtract(a,b){
-    if(typeof parseFloat(a) === `string` || `number`){
+    if(typeof parseInt(a) && typeof parseInt(b) === `string` || `number`){
         return a - b;
     }
-    if(typeof parseFloat(b) === `string` || `number`){
-        return a - b;
+    if(typeof parseInt(a) || typeof parseInt(b) !== `string` || `number`){
+        return false;
     }
+    // if(typeof parseFloat(b) === `string` || `number`){
+    //     return a - b;
+    // }
     return false
 }
 console.log(subtract(3,4));
@@ -60,6 +63,9 @@ function getLowestNumber(a,b,c,){
         //         break;
         //     case c < b && c < a:
         //         return c;
+        //         break;
+        //     default:
+        //         return false;
         //         break;
         // }
         if(a < b && a < c){
@@ -137,12 +143,18 @@ function convertHourToSec(hours){
 //problem10
 // Write a function named calculateChange that takes in two inputs, totalPaid and totalCost. If both inputs are numeric or numeric strings, calculateChange should return the change after subtracting the cost from the amount paid. The return should be in $x.xx format as a string. If either or both inputs are not numeric or numeric strings, calculateChange should return false.
 function calculateChange(totalPaid,totalCost){
-    if(typeof totalPaid && typeof totalCost === `string` || `number`){
-        return `$` + ((parseFloat(totalPaid)).toFixed() - (parseFloat(totalCost)).toFixed())
+    if(typeof totalPaid && typeof totalCost === `number`){
+        return `$` + totalPaid.toFixed(2) - totalCost.toFixed(2)
     }
     return false
 }
+console.log(calculateChange(10,3));
 
-console.log(calculateChange(10.00,3));
+
+//current grade
+function grade(specs,failures){
+    return parseInt(((specs - failures) / specs) * 100)
+}
+console.log(grade(103,27));
 
 
