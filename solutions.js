@@ -18,23 +18,29 @@
  * calculateChange()
  */
 
-// Define a function named lowerCase that takes in an input and returns that input as a string in all lower case letters. Returns false if the input passed is not a string.
-//
-// lowerCase('CODEUP')                 // codeup
-// lowerCase('George WashingTon')      // george washington
-// lowerCase(0)                        // false
-// lowerCase(true)                     // false
-// lowerCase('BoBby')                  // bobby
-// lowerCase(null)                     // false
-// lowerCase([1,2,3])                  // false
-// lowerCase({fName: 'Bruce', lName: 'Wayne'})    // false
-// Write a function named subtract that takes in two inputs. If both inputs provided are numeric or numeric strings, subtract will return the difference when the second input is subtracted from the first input. If one or both inputs is not numeric or numeric strings, subtract should return false.
-//
-// subtract(10, 2)                     // 8
-// subtract(0, 0)                      // 0
-// subtract(-4, 1)                     // -5
-// subtract("10", 2)                   // 8
-// subtract(5, true)                   // false
-// subtract(true, false)               // false
-// subtract("Monday", "Tuesday")       // false
-// subtract()                          // false
+//problem01
+function lowerCase(input){
+    if(typeof input === `string`){
+        return input.toLowerCase();
+    }
+    return false
+}
+
+//problem02
+function subtract(a,b){
+    if(typeof a === `string` || `number`){
+        return parseFloat(a) - parseFloat(b);
+    }
+    if(typeof b === `string` || `number`){
+        return parseFloat(a) - parseFloat(b);
+    }
+    return false
+}
+console.log(subtract(3,4));
+
+//problem03
+function multiplyBy2(input){
+    if(typeof input === `number`){
+        return input * 2
+    }
+}
