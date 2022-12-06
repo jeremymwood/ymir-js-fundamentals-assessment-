@@ -94,13 +94,28 @@ function addStringLengths(a,b){
 //problem09
 // Define a function named convertHourToSec that takes in one input Hours. Return the conversation of the number of hours into total seconds. If the input is not numeric or a numeric string, convertHourToSec, should return false.
 function convertHourToSec(hours){
-
+    if(typeof hours === `boolean`){
+        return false
+    }
+    if(hours < 0){
+        return false
+    }
+    if(typeof hours === `string` || `number`){
+        return parseFloat(hours) * 60 * 60
+    }
+    return false
 }
+// console.log(convertHourToSec(3.66));
 
 //problem10
 // Write a function named calculateChange that takes in two inputs, totalPaid and totalCost. If both inputs are numeric or numeric strings, calculateChange should return the change after subtracting the cost from the amount paid. The return should be in $x.xx format as a string. If either or both inputs are not numeric or numeric strings, calculateChange should return false.
-function calculateChange(a,b){
-
+function calculateChange(totalPaid,totalCost){
+    if(typeof totalPaid && typeof totalCost === `string` || `number`){
+        return `$` + ((parseFloat(totalPaid)).toFixed() - (parseFloat(totalCost)).toFixed())
+    }
+    return false
 }
+
+console.log(calculateChange(10.00,3));
 
 
