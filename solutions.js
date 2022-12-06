@@ -28,11 +28,11 @@ function lowerCase(input){
 
 //problem02
 function subtract(a,b){
-    if(typeof a === `string` || `number`){
-        return parseFloat(a) - parseFloat(b);
+    if(typeof parseFloat(a) === `string` || `number`){
+        return a - b;
     }
-    if(typeof b === `string` || `number`){
-        return parseFloat(a) - parseFloat(b);
+    if(typeof parseFloat(b) === `string` || `number`){
+        return a - b;
     }
     return false
 }
@@ -50,11 +50,32 @@ function multiplyBy2(input){
 // Write a function named getLowestNumber that takes in 3 arguments. If all 3 inputs are numbers or numeric strings, then return the lowest number. If any of the 3 inputs is missing or non-numeric, then return false.
 
 function getLowestNumber(a,b,c,){
-    if(typeof parseFloat(a) && typeof parseFloat(b) && typeof parseFloat(c) === `number`){
-        return true
+    if(typeof a && typeof b && typeof c === `number`){
+        // switch(getLowestNumber) {
+        //     case a < b && a < c:
+        //         return a;
+        //         break;
+        //     case b < a && b < c:
+        //         return b;
+        //         break;
+        //     case c < b && c < a:
+        //         return c;
+        //         break;
+        // }
+        if(a < b && a < c){
+            return a
+        }
+        if(b < a && b < c){
+            return b
+        }
+        if(c < b && c < a){
+            return c
+        }
     }
     return false
 }
+
+console.log(getLowestNumber(3,1,2));
 
 //problem05
 // Define a function named isEvenlyDivisible that takes in two inputs: a numeric value and divisor. If the numeric value can be evenly divided by the divisor, then return true. Otherwise, return false.
@@ -70,7 +91,13 @@ function isEvenlyDivisible(a,b){
 // Define a function named inBetween that takes in three numeric inputs: a value, a low, and high. If the first numeric value is in-between the ranges of the low and high values, then return true. Otherwise, return false.
 
 function inBetween(a,b,c){
-
+    if(a > c && a < b){
+        return true
+    }
+    if(a < c && a > b){
+        return true
+    }
+    return false
 }
 
 //problem07
