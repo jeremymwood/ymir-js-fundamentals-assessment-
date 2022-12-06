@@ -28,18 +28,35 @@ function lowerCase(input){
 
 //problem02
 function subtract(a,b){
-    if(typeof parseInt(a) && typeof parseInt(b) === `string` || `number`){
-        return a - b;
-    }
-    if(typeof parseInt(a) || typeof parseInt(b) !== `string` || `number`){
-        return false;
-    }
-    // if(typeof parseFloat(b) === `string` || `number`){
+    a = parseInt(a);
+    b = parseInt(b);
+
+    // if(typeof parseInt(a) && typeof parseInt(b) === `number`){
     //     return a - b;
     // }
-    return false
+    if (typeof a || typeof a === `number`){
+        return a - b;
+    }
+    return false;
+    // if (typeof parseInt(a) || typeof parseInt(b) === `number`){
+    //     return a - b
+    // }
+    // if (typeof a && typeof b === `boolean`){
+    //     return false
+    // }
+    // if (typeof a || typeof b === `object`){
+    //     return false
+    // }
+    // if(a || b === ``){
+    //     return false;
+    // }
+    // if(a || b === 0){
+    //     return false
+    // }
+
+    // return false
 }
-console.log(subtract(3,4));
+console.log(subtract(`135`,`35`));
 
 //problem03
 function multiplyBy2(input){
@@ -55,6 +72,7 @@ function multiplyBy2(input){
 function getLowestNumber(a,b,c,){
     if(typeof a && typeof b && typeof c === `number`){
         // switch(getLowestNumber) {
+        //     case a < b && a < c:
         //     case a < b && a < c:
         //         return a;
         //         break;
@@ -144,17 +162,19 @@ function convertHourToSec(hours){
 // Write a function named calculateChange that takes in two inputs, totalPaid and totalCost. If both inputs are numeric or numeric strings, calculateChange should return the change after subtracting the cost from the amount paid. The return should be in $x.xx format as a string. If either or both inputs are not numeric or numeric strings, calculateChange should return false.
 function calculateChange(totalPaid,totalCost){
     if(typeof totalPaid && typeof totalCost === `number`){
-        return `$` + totalPaid.toFixed(2) - totalCost.toFixed(2)
+        return `$` + totalPaid.toFixed(2) - totalCost.toFixed(2);
+    }
+    if(typeof totalPaid || typeof totalCost === `boolean`){
+        return false;
     }
     return false
 }
 console.log(calculateChange(10,3));
 
-
 //current grade
 function grade(specs,failures){
     return parseInt(((specs - failures) / specs) * 100)
 }
-console.log(grade(103,27));
+console.log(grade(103,26));
 
 
