@@ -24,25 +24,41 @@ function lowerCase(input){
     }
     return false
 }
-//sjdhfglkasjd
 
 
 //problem02
 // Write a function named subtract that takes in two inputs. If both inputs provided are numeric or numeric strings, subtract will return the difference when the second input is subtracted from the first input. If one or both inputs is not numeric or numeric strings, subtract should return false.
 
-//are numeric or numeric strings
-//second input is subtracted from the first input
 function subtract(a,b){
-    a = parseInt(a);
-    b = parseInt(b);
-    if (typeof a && typeof b === `number`){
-        return a - b;
+    if (isNaN(a) || isNaN(b) === true){
+        return false
     }
-    if ( isNaN(a) || isNaN(b) === true){
-        return false;
+    // if(a || b === true || false){
+    //     return false
+    // }
+    if(a && b === true || false){
+        return false
     }
-    return false
+    // if (typeof parseInt(a) || typeof parseInt(b) !== `number`){
+    //     return false
+    // }
+    return parseInt(a) - parseInt(b)
 }
+
+
+
+// function subtract(a,b){
+//     a = parseInt(a);
+//
+//     b = parseInt(b);
+//     if (typeof a && typeof b === `number`){
+//         return a - b;
+//     }
+//     if ( isNaN(a) || isNaN(b) === true){
+//         return false;
+//     }
+//     return false
+// }
 console.log(subtract(`25`, `lkdjsfsdf`));
 console.log(typeof true);
 console.log(typeof 5);
@@ -51,7 +67,13 @@ console.log(typeof NaN);
 
 //problem03
 function multiplyBy2(input){
-    if(typeof parseFloat(input) === `number`){
+    // if (isNaN(input) === true){
+    //     return false
+    // }
+    // if(typeof parseFloat(input) === `number`){
+    //     return input * 2
+    // }
+    if (input){
         return input * 2
     }
     return false
