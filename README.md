@@ -201,3 +201,4 @@ function isBoolean(input) {
 ```
 
 
+# ymir-js-fundamentals-assessment
