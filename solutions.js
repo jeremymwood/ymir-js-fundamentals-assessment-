@@ -1,5 +1,4 @@
 "use strict";
-
 /**
  * Write your solutions here.
  *
@@ -25,38 +24,30 @@ function lowerCase(input){
     }
     return false
 }
+//sjdhfglkasjd
+
 
 //problem02
+// Write a function named subtract that takes in two inputs. If both inputs provided are numeric or numeric strings, subtract will return the difference when the second input is subtracted from the first input. If one or both inputs is not numeric or numeric strings, subtract should return false.
+
+//are numeric or numeric strings
+//second input is subtracted from the first input
 function subtract(a,b){
     a = parseInt(a);
     b = parseInt(b);
-
-    // if(typeof parseInt(a) && typeof parseInt(b) === `number`){
-    //     return a - b;
-    // }
-    if (typeof a || typeof a === `number`){
+    if (typeof a && typeof b === `number`){
         return a - b;
     }
-    return false;
-    // if (typeof parseInt(a) || typeof parseInt(b) === `number`){
-    //     return a - b
-    // }
-    // if (typeof a && typeof b === `boolean`){
-    //     return false
-    // }
-    // if (typeof a || typeof b === `object`){
-    //     return false
-    // }
-    // if(a || b === ``){
-    //     return false;
-    // }
-    // if(a || b === 0){
-    //     return false
-    // }
-
-    // return false
+    if ( isNaN(a) || isNaN(b) === true){
+        return false;
+    }
+    return false
 }
-console.log(subtract(`135`,`35`));
+console.log(subtract(`25`, `lkdjsfsdf`));
+console.log(typeof true);
+console.log(typeof 5);
+console.log(typeof `6`);
+console.log(typeof NaN);
 
 //problem03
 function multiplyBy2(input){
@@ -105,10 +96,8 @@ console.log(getLowestNumber(3,1,2));
 // Define a function named isEvenlyDivisible that takes in two inputs: a numeric value and divisor. If the numeric value can be evenly divided by the divisor, then return true. Otherwise, return false.
 
 function isEvenlyDivisible(a,b){
-    if(b % a === 0){
-        return true
-    }
-    return false
+    return b % a === 0;
+
 }
 
 //problem06
@@ -176,5 +165,4 @@ function grade(specs,failures){
     return parseInt(((specs - failures) / specs) * 100)
 }
 console.log(grade(103,26));
-
 
