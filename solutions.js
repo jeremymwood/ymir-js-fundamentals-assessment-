@@ -44,21 +44,6 @@ function subtract(a,b){
     // }
     return parseInt(a) - parseInt(b)
 }
-
-
-
-// function subtract(a,b){
-//     a = parseInt(a);
-//
-//     b = parseInt(b);
-//     if (typeof a && typeof b === `number`){
-//         return a - b;
-//     }
-//     if ( isNaN(a) || isNaN(b) === true){
-//         return false;
-//     }
-//     return false
-// }
 console.log(subtract(`25`, `lkdjsfsdf`));
 console.log(typeof true);
 console.log(typeof 5);
@@ -67,15 +52,15 @@ console.log(typeof NaN);
 
 //problem03
 function multiplyBy2(input){
-    // if (isNaN(input) === true){
-    //     return false
-    // }
-    // if(typeof parseFloat(input) === `number`){
-    //     return input * 2
-    // }
-    if (input){
+    if (input === null){
+        return false
+    }  else
+    if (typeof input === `boolean`){
+        return false
+    }  else
+    if(typeof parseFloat(input) === `number`){
         return input * 2
-    }
+    }  else
     return false
 }
 
