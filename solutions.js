@@ -33,22 +33,11 @@ function subtract(a,b){
     if (isNaN(a) || isNaN(b) === true){
         return false
     }
-    // if(a || b === true || false){
-    //     return false
-    // }
-    if(a && b === true || false){
+    if(typeof a && typeof b === `boolean`){
         return false
     }
-    // if (typeof parseInt(a) || typeof parseInt(b) !== `number`){
-    //     return false
-    // }
     return parseInt(a) - parseInt(b)
 }
-console.log(subtract(`25`, `lkdjsfsdf`));
-console.log(typeof true);
-console.log(typeof 5);
-console.log(typeof `6`);
-console.log(typeof NaN);
 
 //problem03
 function multiplyBy2(input){
@@ -93,19 +82,27 @@ function getLowestNumber(a,b,c,){
         if(c < b && c < a){
             return c
         }
+        if (a === b && b === c){
+            return a
+        }
     }
     return false
 }
-
-console.log(getLowestNumber(3,1,2));
+// console.log(getLowestNumber(3,1,2));
 
 //problem05
 // Define a function named isEvenlyDivisible that takes in two inputs: a numeric value and divisor. If the numeric value can be evenly divided by the divisor, then return true. Otherwise, return false.
 
 function isEvenlyDivisible(a,b){
-    return b % a === 0;
-
+    if(a % b === 0){
+        return true
+    }
+    if( typeof a || typeof b === null){
+        return false
+    } else
+    return false;
 }
+// console.log(isEvenlyDivisible(100,2))
 
 //problem06
 // Define a function named inBetween that takes in three numeric inputs: a value, a low, and high. If the first numeric value is in-between the ranges of the low and high values, then return true. Otherwise, return false.
@@ -117,8 +114,16 @@ function inBetween(a,b,c){
     if(a < c && a > b){
         return true
     }
+    // if (typeof a && typeof b && typeof c !== `number`){
+    //     return false
+    // }
+    if (isNaN(a) && isNaN(b) && isNaN(c) !== false){
+        return false
+    }
     return false
 }
+
+console.log(inBetween(1,2,3));
 
 //problem07
 // Write a function named replace that takes in three inputs. The first input is a string, the second input is the string that is to be replaced, the third is the string that you are replacing the second input with. Only replace the first occurrence of the matched string. Return the string with the newly replaced values. If the first input is not a string, return false.
