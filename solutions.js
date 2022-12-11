@@ -123,7 +123,7 @@ function inBetween(a,b,c){
     return false
 }
 
-console.log(inBetween(1,2,3));
+// console.log(inBetween(1,2,3));
 
 //problem07
 // Write a function named replace that takes in three inputs. The first input is a string, the second input is the string that is to be replaced, the third is the string that you are replacing the second input with. Only replace the first occurrence of the matched string. Return the string with the newly replaced values. If the first input is not a string, return false.
@@ -133,49 +133,67 @@ function replace(a,b,c){
     }
     return a.replace(b,c);
 }
-console.log(replace(1,2,3));
+// console.log(replace(1,2,3));
 
 //problem08
 // Write a function named addStringLengths that takes in two inputs. If both inputs provided are strings, addStringLengths returns the sum after adding the length (number of characters) of both strings. If either or both inputs are not strings, return false.
 function addStringLengths(a,b){
-    if(typeof a && typeof b === `string`){
-        return a.length + b.length
+    // console.log(`${a} type: ${typeof a}`);
+    // console.log(`${b} type: ${typeof b}`);
+    if((typeof a && typeof b) !== `string`){
+        return false
     }
-    return false
+    return a.length + b.length
 }
+// console.log(addStringLengths([],`string`));
+
 
 //problem09
 // Define a function named convertHourToSec that takes in one input Hours. Return the conversation of the number of hours into total seconds. If the input is not numeric or a numeric string, convertHourToSec, should return false.
 function convertHourToSec(hours){
-    if(typeof hours === `boolean`){
+    if(hours === null){
+        return false
+    }
+    if (isNaN(hours) === true){
         return false
     }
     if(hours < 0){
         return false
     }
-    if(typeof hours === `string` || `number`){
-        return parseFloat(hours) * 60 * 60
+    if(hours === true){
+        return false
     }
-    return false
+    return parseFloat(hours) * 60 * 60
 }
-// console.log(convertHourToSec(3.66));
+console.log(convertHourToSec(10.22));
 
 //problem10
 // Write a function named calculateChange that takes in two inputs, totalPaid and totalCost. If both inputs are numeric or numeric strings, calculateChange should return the change after subtracting the cost from the amount paid. The return should be in $x.xx format as a string. If either or both inputs are not numeric or numeric strings, calculateChange should return false.
+
+//numeric or numeric strings
+//two inputs
+//subtracting the cost from the amount paid
+//return change
+//$x.xx format as string
+//otherwise, return false
+
 function calculateChange(totalPaid,totalCost){
-    if(typeof totalPaid && typeof totalCost === `number`){
+    // if(typeof totalPaid && typeof totalCost === `number`){
+    // }
+    // if(typeof totalPaid || typeof totalCost === `boolean`){
+    //     return false;
+    // }
+    if (isNaN(totalPaid) && isNaN(totalCost) === false){
         return `$` + totalPaid.toFixed(2) - totalCost.toFixed(2);
-    }
-    if(typeof totalPaid || typeof totalCost === `boolean`){
-        return false;
     }
     return false
 }
 console.log(calculateChange(10,3));
 
+
 //current grade
 function grade(specs,failures){
     return parseInt(((specs - failures) / specs) * 100)
 }
-console.log(grade(103,26));
+console.log(grade(103,9));
 
