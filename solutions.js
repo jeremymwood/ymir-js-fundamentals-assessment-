@@ -131,8 +131,9 @@ function replace(a,b,c){
     if(typeof a !== `string`){
         return false
     }
-    return b = c
+    return a.replace(b,c);
 }
+console.log(replace(1,2,3));
 
 //problem08
 // Write a function named addStringLengths that takes in two inputs. If both inputs provided are strings, addStringLengths returns the sum after adding the length (number of characters) of both strings. If either or both inputs are not strings, return false.
