@@ -108,6 +108,9 @@ function isEvenlyDivisible(a,b){
 // Define a function named inBetween that takes in three numeric inputs: a value, a low, and high. If the first numeric value is in-between the ranges of the low and high values, then return true. Otherwise, return false.
 
 function inBetween(a,b,c){
+    if (isNaN(a) && isNaN(b) && isNaN(c)){
+        return false
+    }
     if(a > c && a < b){
         return true
     }
@@ -117,12 +120,9 @@ function inBetween(a,b,c){
     // if (typeof a && typeof b && typeof c !== `number`){
     //     return false
     // }
-    if (isNaN(a) && isNaN(b) && isNaN(c) !== false){
-        return false
-    }
     return false
 }
-
+//passing tests vary
 // console.log(inBetween(1,2,3));
 
 //problem07
@@ -183,17 +183,17 @@ function calculateChange(totalPaid,totalCost){
     // if(typeof totalPaid || typeof totalCost === `boolean`){
     //     return false;
     // }
-    if (isNaN(totalPaid) && isNaN(totalCost) === false){
-        return `$` + totalPaid.toFixed(2) - totalCost.toFixed(2);
+    if (isNaN(totalPaid) && isNaN(totalCost)){
+        return false
     }
-    return false
+    return `$${(totalPaid- totalCost).toFixed(2)}`;
 }
-console.log(calculateChange(10,3));
-
+console.log(calculateChange(7.50, 1.5));
+console.log(typeof 10)
 
 //current grade
 function grade(specs,failures){
     return parseInt(((specs - failures) / specs) * 100)
 }
-console.log(grade(103,9));
+console.log(grade(103,5));
 
