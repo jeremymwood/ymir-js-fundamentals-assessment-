@@ -94,6 +94,9 @@ function getLowestNumber(a,b,c,){
 // Define a function named isEvenlyDivisible that takes in two inputs: a numeric value and divisor. If the numeric value can be evenly divided by the divisor, then return true. Otherwise, return false.
 
 function isEvenlyDivisible(a,b){
+    if(a === null || b === null){
+        return false
+    }
     if(a % b === 0){
         return true
     }
@@ -108,7 +111,10 @@ function isEvenlyDivisible(a,b){
 // Define a function named inBetween that takes in three numeric inputs: a value, a low, and high. If the first numeric value is in-between the ranges of the low and high values, then return true. Otherwise, return false.
 
 function inBetween(a,b,c){
-    if (isNaN(a) && isNaN(b) && isNaN(c)){
+    // if (isNaN(a) || isNaN(b) || isNaN(c)){
+    //     return false
+    // }
+    if (typeof a !== `number`){
         return false
     }
     if(a > c && a < b){
@@ -140,10 +146,10 @@ function replace(a,b,c){
 function addStringLengths(a,b){
     // console.log(`${a} type: ${typeof a}`);
     // console.log(`${b} type: ${typeof b}`);
-    if((typeof a && typeof b) !== `string`){
-        return false
+    if(typeof a === `string` && typeof b === `string`){
+        return a.length + b.length
     }
-    return a.length + b.length
+    return false
 }
 // console.log(addStringLengths([],`string`));
 
@@ -178,22 +184,36 @@ console.log(convertHourToSec(10.22));
 //otherwise, return false
 
 function calculateChange(totalPaid,totalCost){
-    // if(typeof totalPaid && typeof totalCost === `number`){
-    // }
-    // if(typeof totalPaid || typeof totalCost === `boolean`){
-    //     return false;
-    // }
-    if (isNaN(totalPaid) && isNaN(totalCost)){
+    if (typeof totalPaid !== `number` && typeof totalPaid !== `string`){
         return false
     }
-    return `$${(totalPaid- totalCost).toFixed(2)}`;
+    if (typeof totalCost !== `number` && typeof totalCost !== `string`){
+        return false
+    }
+    if (isNaN(totalPaid) || isNaN(totalCost) === true){
+        return false
+    }
+    return `$${(totalPaid - totalCost).toFixed(2)}`
 }
-console.log(calculateChange(7.50, 1.5));
-console.log(typeof 10)
+console.log(calculateChange(`30`, 15));
+// console.log(typeof 10)
 
 //current grade
 function grade(specs,failures){
     return parseInt(((specs - failures) / specs) * 100)
 }
-console.log(grade(103,5));
 
+console.log(`Current grade: ${grade(103, 0)
+}`);
+
+// 4 failures:
+// isEvenlyDivisible
+// isBetween
+// addStringLengths
+// calculateChange
+
+//5th failure
+// convertHourToSec
+
+// 6th failure
+//2nd convertHourToSec, boolean
